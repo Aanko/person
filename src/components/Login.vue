@@ -51,14 +51,7 @@ export default {
     return {};
   },
   methods: {
-    btn_login() {
-      Axios.post("/login/loginVerify", {
-        userCode: "admin",
-        userPassword: "123456"
-      }).then(function(res) {
-        console.log(res);
-      });
-    }
+    btn_login() {}
   },
   computed: {
     ...mapState(["loginStore"])
