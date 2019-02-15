@@ -39,7 +39,9 @@
         </div>
       </div>
     </div>
+    {{loginStore.userdata}}
   </div>
+
 </template>
 
 <script>
@@ -51,7 +53,9 @@ export default {
     return {};
   },
   methods: {
-    btn_login() {}
+    btn_login() {
+      this.$store.dispatch("login");
+    }
   },
   computed: {
     ...mapState(["loginStore"])
