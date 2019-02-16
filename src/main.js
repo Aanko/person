@@ -3,10 +3,12 @@ import App from './App'
 import router from './router'
 import '../src/assets/css/bootstrap.min.css'
 import '../src/assets/js/bootstrap'
+import '../src/assets/font-awesome-4.7.0/css/font-awesome.min.css'
 import axios from 'axios'
 import store from './store';
 import VueAxios from 'vue-axios'
 import Vuex from 'Vuex'
+
 
 Vue.use(VueAxios, axios)
 Vue.use(Vuex)

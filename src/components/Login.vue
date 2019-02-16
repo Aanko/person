@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div>
+    <div style="  margin-top: 60px;">
       <div class="container login-form">
         <div class="login-logo">Halo</div>
         <div class="login-body animated" style="width:300px ;margin:0px auto;">
@@ -41,7 +41,6 @@
     </div>
     {{loginStore.userdata}}
   </div>
-
 </template>
 
 <script>
@@ -55,6 +54,7 @@ export default {
   methods: {
     btn_login() {
       this.$store.dispatch("login");
+      this.$router.push('home')
     }
   },
   computed: {
