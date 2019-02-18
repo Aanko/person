@@ -1,6 +1,27 @@
 <template>
-  <div class="hello">
-    <div style="  margin-top: 60px;">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html">后台管理系统</a>
+    </div>
+    <div class="login-box-body">
+      <form action="../../index2.html" method="post">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="账号">
+          <!-- <span class="glyphicon glyphicon-envelope form-control-feedback"></span> -->
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" placeholder="密码">
+          <!-- <span class="glyphicon glyphicon-lock form-control-feedback"></span> -->
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit"  @click="btn_login()" class="btn btn-primary btn-block btn-flat">登 录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- /.login-box-body -->
+    <!-- <div style="margin-top: 60px; text-align:center">
       <div class="container login-form">
         <div class="login-logo">Halo</div>
         <div class="login-body animated" style="width:300px ;margin:0px auto;">
@@ -38,7 +59,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div>-->
     {{loginStore.userdata}}
   </div>
 </template>
@@ -54,7 +75,7 @@ export default {
   methods: {
     btn_login() {
       this.$store.dispatch("login");
-      this.$router.push('home')
+      this.$router.push("home");
     }
   },
   computed: {
