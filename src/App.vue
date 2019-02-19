@@ -11,6 +11,14 @@ export default {
 </script>
 
 <style>
+@media screen and (min-width: 414px) {
+  .wrapper {
+    min-height: 1024px;
+  }
+  .content-wrapper {
+    min-height: 940px;
+  }
+}
 body {
   background-color: #f4f4f4;
   padding: 0px;
