@@ -20,7 +20,7 @@
                 class="user-image"
                 alt="User Image"
               >
-              <span class="hidden-xs">爱扯淡的虾</span>
+              <span class="hidden-xs">{{userinfo.userDisplayName}}</span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
@@ -30,10 +30,10 @@
                   alt="User Image"
                 >
                 <p>
-                  <small>爱扯淡的虾</small>
+                  <small>{{userinfo.userDisplayName}}</small>
                 </p>
                 <p>
-                  <small>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</small>
+                  <small>{{userinfo.userDesc}}</small>
                 </p>
               </li>
               <li class="user-footer">
@@ -58,9 +58,22 @@ import { mapState } from "Vuex";
 export default {
   name: "header",
   data() {
-    return {};
+    return {
+      userinfo:''
+    };
   },
-  methods: {},
+  methods: {
+    user() {
+      Axios.get("https://slogc.cc/api/user",{
+      }).then(response => {
+        this.userinfo = response.data.result;
+        console.log(response.data.result);
+      });
+    }
+  },
+  mounted() {
+    this.user();
+  },
   computed: {}
 };
 </script>
